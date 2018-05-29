@@ -12,12 +12,12 @@ Chapters 9 and 11 do not have code files.
 The code will look like the following:
 ```
 <?xml version = "1.0"?>
-<SOAP-ENV:Envelope 
- xmlns:SOAP-ENV = "http://www.w3.org/2001/12/soap-envelope" 
- SOAP-ENV:encodingStyle = "http://www.w3.org/2001/12/soap-encoding">
- ...
- SOAP Message information goes here
- ...
+  <SOAP-ENV:Envelope 
+  xmlns:SOAP-ENV = "http://www.w3.org/2001/12/soap-envelope" 
+  SOAP-ENV:encodingStyle = "http://www.w3.org/2001/12/soap-encoding">
+  ...
+  SOAP Message information goes here
+  ...
 </SOAP-ENV:Envelope>
 ```
 
@@ -25,13 +25,11 @@ The reader should have prior knowledge of .NET Core and .NET Standard, along wit
 
 To set up the system, readers should have following on their machines:
 
-Visual Studio 2017 Update 3 or later (for download and installation instructions refer to https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio)
-SQL Server 2008 R2 or later (for download and installation instructions refer to https://blogs.msdn.microsoft.com/bethmassi/2011/02/18/step-by-step-installing-sql-server-management-studio-2008-express-after-visual-studio-2010/)
-
-
-.NET Core 2.0
-Download: https://www.microsoft.com/net/download/windows
-Installation instructions: https://blogs.msdn.microsoft.com/benjaminperkins/2017/09/20/how-to-install-net-core-2-0/
+* Visual Studio 2017 Update 3 or later (for download and installation instructions refer to https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio)
+* SQL Server 2008 R2 or later (for download and installation instructions refer to https://blogs.msdn.microsoft.com/bethmassi/2011/02/18/step-by-step-installing-sql-server-management-studio-2008-express-after-visual-studio-2010/)
+* .NET Core 2.0
+   * Download: https://www.microsoft.com/net/download/windows
+   * Installation instructions: https://blogs.msdn.microsoft.com/benjaminperkins/2017/09/20/how-to-install-net-core-2-0/
 
 ## Related Products
 * [Building Microservices with .NET Core 2.0 - Second Edition](https://www.packtpub.com/application-development/building-microservices-net-core-20-second-edition?utm_source=github&utm_medium=repository&utm_campaign=9781788393331)
