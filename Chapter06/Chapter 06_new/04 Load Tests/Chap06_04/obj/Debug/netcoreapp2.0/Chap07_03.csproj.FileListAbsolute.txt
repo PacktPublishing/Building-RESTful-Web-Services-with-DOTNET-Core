@@ -1,0 +1,11 @@
+D:\Webservices\Chapter 07\03 Fake Object Tests\Chap07_03\bin\Debug\netcoreapp2.0\Chap07_03.deps.json
+D:\Webservices\Chapter 07\03 Fake Object Tests\Chap07_03\bin\Debug\netcoreapp2.0\Chap07_03.runtimeconfig.json
+D:\Webservices\Chapter 07\03 Fake Object Tests\Chap07_03\bin\Debug\netcoreapp2.0\Chap07_03.runtimeconfig.dev.json
+D:\Webservices\Chapter 07\03 Fake Object Tests\Chap07_03\bin\Debug\netcoreapp2.0\Chap07_03.dll
+D:\Webservices\Chapter 07\03 Fake Object Tests\Chap07_03\bin\Debug\netcoreapp2.0\Chap07_03.pdb
+D:\Webservices\Chapter 07\03 Fake Object Tests\Chap07_03\obj\Debug\netcoreapp2.0\Chap07_03.csprojResolveAssemblyReference.cache
+D:\Webservices\Chapter 07\03 Fake Object Tests\Chap07_03\obj\Debug\netcoreapp2.0\Chap07_03.csproj.CoreCompileInputs.cache
+D:\Webservices\Chapter 07\03 Fake Object Tests\Chap07_03\obj\Debug\netcoreapp2.0\Chap07_03.AssemblyInfoInputs.cache
+D:\Webservices\Chapter 07\03 Fake Object Tests\Chap07_03\obj\Debug\netcoreapp2.0\Chap07_03.AssemblyInfo.cs
+D:\Webservices\Chapter 07\03 Fake Object Tests\Chap07_03\obj\Debug\netcoreapp2.0\Chap07_03.dll
+D:\Webservices\Chapter 07\03 Fake Object Tests\Chap07_03\obj\Debug\netcoreapp2.0\Chap07_03.pdb

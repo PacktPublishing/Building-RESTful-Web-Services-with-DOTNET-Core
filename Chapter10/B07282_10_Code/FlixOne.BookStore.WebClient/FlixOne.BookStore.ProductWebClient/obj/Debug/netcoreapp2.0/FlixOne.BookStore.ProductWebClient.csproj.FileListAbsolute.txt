@@ -1,0 +1,11 @@
+D:\Webservices\Chapter 10\FlixOne.BookStore.WebClient\FlixOne.BookStore.ProductWebClient\bin\Debug\netcoreapp2.0\FlixOne.BookStore.ProductWebClient.deps.json
+D:\Webservices\Chapter 10\FlixOne.BookStore.WebClient\FlixOne.BookStore.ProductWebClient\bin\Debug\netcoreapp2.0\FlixOne.BookStore.ProductWebClient.runtimeconfig.json
+D:\Webservices\Chapter 10\FlixOne.BookStore.WebClient\FlixOne.BookStore.ProductWebClient\bin\Debug\netcoreapp2.0\FlixOne.BookStore.ProductWebClient.runtimeconfig.dev.json
+D:\Webservices\Chapter 10\FlixOne.BookStore.WebClient\FlixOne.BookStore.ProductWebClient\bin\Debug\netcoreapp2.0\FlixOne.BookStore.ProductWebClient.dll
+D:\Webservices\Chapter 10\FlixOne.BookStore.WebClient\FlixOne.BookStore.ProductWebClient\bin\Debug\netcoreapp2.0\FlixOne.BookStore.ProductWebClient.pdb
+D:\Webservices\Chapter 10\FlixOne.BookStore.WebClient\FlixOne.BookStore.ProductWebClient\obj\Debug\netcoreapp2.0\FlixOne.BookStore.ProductWebClient.csprojResolveAssemblyReference.cache
+D:\Webservices\Chapter 10\FlixOne.BookStore.WebClient\FlixOne.BookStore.ProductWebClient\obj\Debug\netcoreapp2.0\FlixOne.BookStore.ProductWebClient.csproj.CoreCompileInputs.cache
+D:\Webservices\Chapter 10\FlixOne.BookStore.WebClient\FlixOne.BookStore.ProductWebClient\obj\Debug\netcoreapp2.0\FlixOne.BookStore.ProductWebClient.AssemblyInfoInputs.cache
+D:\Webservices\Chapter 10\FlixOne.BookStore.WebClient\FlixOne.BookStore.ProductWebClient\obj\Debug\netcoreapp2.0\FlixOne.BookStore.ProductWebClient.AssemblyInfo.cs
+D:\Webservices\Chapter 10\FlixOne.BookStore.WebClient\FlixOne.BookStore.ProductWebClient\obj\Debug\netcoreapp2.0\FlixOne.BookStore.ProductWebClient.dll
+D:\Webservices\Chapter 10\FlixOne.BookStore.WebClient\FlixOne.BookStore.ProductWebClient\obj\Debug\netcoreapp2.0\FlixOne.BookStore.ProductWebClient.pdb

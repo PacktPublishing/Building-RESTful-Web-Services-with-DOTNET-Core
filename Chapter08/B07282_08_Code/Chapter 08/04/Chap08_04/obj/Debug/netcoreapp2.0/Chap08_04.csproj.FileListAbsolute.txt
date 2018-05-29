@@ -1,0 +1,11 @@
+D:\Webservices\Chapter 08\04\Chap08_04\bin\Debug\netcoreapp2.0\Chap08_04.deps.json
+D:\Webservices\Chapter 08\04\Chap08_04\bin\Debug\netcoreapp2.0\Chap08_04.runtimeconfig.json
+D:\Webservices\Chapter 08\04\Chap08_04\bin\Debug\netcoreapp2.0\Chap08_04.runtimeconfig.dev.json
+D:\Webservices\Chapter 08\04\Chap08_04\bin\Debug\netcoreapp2.0\Chap08_04.dll
+D:\Webservices\Chapter 08\04\Chap08_04\bin\Debug\netcoreapp2.0\Chap08_04.pdb
+D:\Webservices\Chapter 08\04\Chap08_04\obj\Debug\netcoreapp2.0\Chap08_04.csprojResolveAssemblyReference.cache
+D:\Webservices\Chapter 08\04\Chap08_04\obj\Debug\netcoreapp2.0\Chap08_04.csproj.CoreCompileInputs.cache
+D:\Webservices\Chapter 08\04\Chap08_04\obj\Debug\netcoreapp2.0\Chap08_04.AssemblyInfoInputs.cache
+D:\Webservices\Chapter 08\04\Chap08_04\obj\Debug\netcoreapp2.0\Chap08_04.AssemblyInfo.cs
+D:\Webservices\Chapter 08\04\Chap08_04\obj\Debug\netcoreapp2.0\Chap08_04.dll
+D:\Webservices\Chapter 08\04\Chap08_04\obj\Debug\netcoreapp2.0\Chap08_04.pdb

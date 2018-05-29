@@ -1,0 +1,11 @@
+E:\Backup\Desktop\Packt\RESTful Services in .NET Core 2.0\Projects\DemoECommerceApp\DemoECommerceApp\bin\Debug\netcoreapp2.0\DemoECommerceApp.deps.json
+E:\Backup\Desktop\Packt\RESTful Services in .NET Core 2.0\Projects\DemoECommerceApp\DemoECommerceApp\bin\Debug\netcoreapp2.0\DemoECommerceApp.runtimeconfig.json
+E:\Backup\Desktop\Packt\RESTful Services in .NET Core 2.0\Projects\DemoECommerceApp\DemoECommerceApp\bin\Debug\netcoreapp2.0\DemoECommerceApp.runtimeconfig.dev.json
+E:\Backup\Desktop\Packt\RESTful Services in .NET Core 2.0\Projects\DemoECommerceApp\DemoECommerceApp\bin\Debug\netcoreapp2.0\DemoECommerceApp.dll
+E:\Backup\Desktop\Packt\RESTful Services in .NET Core 2.0\Projects\DemoECommerceApp\DemoECommerceApp\bin\Debug\netcoreapp2.0\DemoECommerceApp.pdb
+E:\Backup\Desktop\Packt\RESTful Services in .NET Core 2.0\Projects\DemoECommerceApp\DemoECommerceApp\obj\Debug\netcoreapp2.0\DemoECommerceApp.csproj.CoreCompileInputs.cache
+E:\Backup\Desktop\Packt\RESTful Services in .NET Core 2.0\Projects\DemoECommerceApp\DemoECommerceApp\obj\Debug\netcoreapp2.0\DemoECommerceApp.AssemblyInfoInputs.cache
+E:\Backup\Desktop\Packt\RESTful Services in .NET Core 2.0\Projects\DemoECommerceApp\DemoECommerceApp\obj\Debug\netcoreapp2.0\DemoECommerceApp.AssemblyInfo.cs
+E:\Backup\Desktop\Packt\RESTful Services in .NET Core 2.0\Projects\DemoECommerceApp\DemoECommerceApp\obj\Debug\netcoreapp2.0\DemoECommerceApp.dll
+E:\Backup\Desktop\Packt\RESTful Services in .NET Core 2.0\Projects\DemoECommerceApp\DemoECommerceApp\obj\Debug\netcoreapp2.0\DemoECommerceApp.pdb
+E:\Backup\Desktop\Packt\RESTful Services in .NET Core 2.0\Projects\DemoECommerceApp\DemoECommerceApp\obj\Debug\netcoreapp2.0\DemoECommerceApp.csprojResolveAssemblyReference.cache

@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>FlixOneStore Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.container > div').not("#Home").hide();
+
+            $('nav li a').click(function () {
+                $('.container > div').hide();
+                $('.nav li').removeClass('active');
+
+                $(this).addClass('active');
+                $('#' + $(this).attr('data-div')).show();
+
+                // Load profile details.
+                if ($(this).attr('data-div') == 'Profile') {
+                    // Call API.
+                    var email = 'taditdash@gmail.com',
+                        password = '12345';
+
+                    $.ajax({
+                        url: 'http://localhost:57571/api/Customers/910D4C2F-B394-4578-8D9C-7CA3FD3266E2',
+                        type: "GET",
+                        contentType: "application/json",
+                        dataType: "json",
+                        headers: { 'Authorization': 'Basic ' + btoa(email + ':' + password) },
+                        success: function (result) {
+                            if (result) {
+                                for (var key in result) {
+                                    var value = result[key];
+
+                                    $('<div class="form-group">')
+                                        .append('<label class="control-label col-sm-2">' + key + '</label>')
+                                        .append('<div class="col-sm-4"><input type="text" class="form-control" value="' + value + '" /></div>')
+                                        .appendTo("#Profile .form-horizontal");
+                                }
+                            }
+                        },
+                        error: function (err) {
+                            if (err.status == 401) {
+                                alert("Either wrong email and password or you are not authorized to access the data!")
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">FlixOneStore</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a data-div="Home" href="#">Home</a></li>
+                <li><a id="aProfile" data-div="Profile" href="#">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="Home">
+            <h2>Home</h2>
+        </div>
+        <div id="Profile">
+            <h2>My Profile</h2>
+            <div class="form-horizontal">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

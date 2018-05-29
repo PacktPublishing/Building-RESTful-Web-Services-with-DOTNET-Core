@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlixOneProductServices", "FlixOneProductServices\FlixOneProductServices.csproj", "{48DD424D-8D04-4614-815E-241587DF1FCE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlixOneProductServices_Test", "FlixOneProductServices_Test\FlixOneProductServices_Test.csproj", "{EE95822E-8CBD-4FAB-AAA3-103BAD00E4DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48DD424D-8D04-4614-815E-241587DF1FCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48DD424D-8D04-4614-815E-241587DF1FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48DD424D-8D04-4614-815E-241587DF1FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48DD424D-8D04-4614-815E-241587DF1FCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE95822E-8CBD-4FAB-AAA3-103BAD00E4DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE95822E-8CBD-4FAB-AAA3-103BAD00E4DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE95822E-8CBD-4FAB-AAA3-103BAD00E4DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE95822E-8CBD-4FAB-AAA3-103BAD00E4DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A44CDE3D-9AED-4FD1-B108-D46CDB6AF3DA}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://gaurav-arora.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = FlixOneProductServices\\FlixOneProductServices.csproj
+		SccProjectName1 = FlixOneProductServices
+		SccLocalPath1 = FlixOneProductServices
+		SccProjectUniqueName2 = FlixOneProductServices_Test\\FlixOneProductServices_Test.csproj
+		SccProjectName2 = FlixOneProductServices_Test
+		SccLocalPath2 = FlixOneProductServices_Test
+	EndGlobalSection
+EndGlobal

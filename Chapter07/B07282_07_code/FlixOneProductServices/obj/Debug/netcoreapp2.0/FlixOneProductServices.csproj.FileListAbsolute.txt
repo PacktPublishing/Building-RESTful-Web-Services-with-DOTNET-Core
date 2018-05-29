@@ -1,0 +1,11 @@
+D:\Webservices\Chapter 06\FlixOneProductServices\bin\Debug\netcoreapp2.0\FlixOneProductServices.deps.json
+D:\Webservices\Chapter 06\FlixOneProductServices\bin\Debug\netcoreapp2.0\FlixOneProductServices.runtimeconfig.json
+D:\Webservices\Chapter 06\FlixOneProductServices\bin\Debug\netcoreapp2.0\FlixOneProductServices.runtimeconfig.dev.json
+D:\Webservices\Chapter 06\FlixOneProductServices\bin\Debug\netcoreapp2.0\FlixOneProductServices.dll
+D:\Webservices\Chapter 06\FlixOneProductServices\bin\Debug\netcoreapp2.0\FlixOneProductServices.pdb
+D:\Webservices\Chapter 06\FlixOneProductServices\obj\Debug\netcoreapp2.0\FlixOneProductServices.csprojResolveAssemblyReference.cache
+D:\Webservices\Chapter 06\FlixOneProductServices\obj\Debug\netcoreapp2.0\FlixOneProductServices.csproj.CoreCompileInputs.cache
+D:\Webservices\Chapter 06\FlixOneProductServices\obj\Debug\netcoreapp2.0\FlixOneProductServices.AssemblyInfoInputs.cache
+D:\Webservices\Chapter 06\FlixOneProductServices\obj\Debug\netcoreapp2.0\FlixOneProductServices.AssemblyInfo.cs
+D:\Webservices\Chapter 06\FlixOneProductServices\obj\Debug\netcoreapp2.0\FlixOneProductServices.dll
+D:\Webservices\Chapter 06\FlixOneProductServices\obj\Debug\netcoreapp2.0\FlixOneProductServices.pdb

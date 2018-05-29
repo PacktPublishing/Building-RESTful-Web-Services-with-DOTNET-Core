@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FlixOneStore Registration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnRegister').click(function () {
+                // Check password and confirm password.
+                var password = $('#txtPassword').val(),
+                    confirmPassword = $('#txtConfirmPassword').val();
+                if (password !== confirmPassword) {
+                    alert("Password and Confirm Password don't match!");
+                    return;
+                }
+
+                // Make a customer object.
+                var customer = {
+                    "gender": $("input[name='gender']:checked").val(),
+                    "firstname": $('#txtFirstName').val(),
+                    "lastname": $('#txtLastName').val(),
+                    "dob": $('#txtDob').val(),
+                    "email": $('#txtEmail').val(),
+                    "telephone": $('#txtMobile').val(),
+                    "fax": $('#txtFax').val(),
+                    "password": $('#txtPassword').val(),
+                    "newsletteropted": false
+                };
+
+                $.ajax({
+                    url: 'http://localhost:57571/api/Customers',
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(customer),
+                    dataType: "json",
+                    success: function (result) {
+                        alert("A customer record created for: "
+                            + result.firstname + " " + result.lastname);
+                    },
+                    error: function (err) {
+                        alert(err.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Register for FlixOneStore</h2>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="txtFirstName">First Name:</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="txtFirstName" placeholder="Enter first name" name="firstname">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="txtLastName">Last Name:</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="txtLastName" placeholder="Enter last name" name="lastname">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="txtEmail">Email:</label>
+                <div class="col-sm-3">
+                    <input type="email" class="form-control" id="txtEmail" placeholder="Enter email" name="email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="gender">Gender:</label>
+                <div class="col-sm-3">
+                    <label class="radio-inline"><input type="radio" value="M" name="gender">Male</label>
+                    <lable class="radio-inline"><input type="radio" value="F" name="gender">Female</lable>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="txtDob">Date of Birth:</label>
+                <div class="col-sm-3">
+                    <input type="date" class="form-control" id="txtDob" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="txtMobile">Mobile Number:</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="txtMobile" placeholder="Enter mobile number" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="txtFax">Fax:</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="txtFax" placeholder="Enter fax" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="txtPassword">Password:</label>
+                <div class="col-sm-3">
+                    <input type="password" class="form-control" id="txtPassword" placeholder="Enter password" name="pwd">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="txtConfirmPassword">Confirm Password:</label>
+                <div class="col-sm-3">
+                    <input type="password" class="form-control" id="txtConfirmPassword" placeholder="Enter password again" name="confirmpwd">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" class="btn btn-success" id="btnRegister">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,380 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>FlixOneStore Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .spanPrice {
+            float: right;
+            padding-right: 7px;
+            font-weight: bold;
+        }
+
+        .floatRight {
+            float: right;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var accessToken = 'eyJhbGciOiJSUzI1NiIsImtpZCI6ImVkMDFmZTk4ZWU5ZDg2MDllNzdiNmUxM2M0NmMzZWU1IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1MjY1NTk3MjksImV4cCI6MTUyNjU2MzMyOSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1NzU3MSIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjU3NTcxL3Jlc291cmNlcyIsIkZsaXhPbmVTdG9yZS5SZWFkQWNjZXNzIl0sImNsaWVudF9pZCI6Imh0bWxDbGllbnQiLCJzdWIiOiI5MTBkNGMyZi1iMzk0LTQ1NzgtOGQ5Yy03Y2EzZmQzMjY2ZTIiLCJhdXRoX3RpbWUiOjE1MjY1NTk3MjksImlkcCI6ImxvY2FsIiwiaWQiOiI5MTBkNGMyZi1iMzk0LTQ1NzgtOGQ5Yy03Y2EzZmQzMjY2ZTIiLCJuYW1lIjoiVGFkaXQgRGFzaCIsImdpdmVuX25hbWUiOiJUYWRpdCIsImZhbWlseV9uYW1lIjoiRGFzaCIsImVtYWlsIjoidGFkaXRkYXNoQGdtYWlsLmNvbSIsInNjb3BlIjpbIkZsaXhPbmVTdG9yZS5SZWFkQWNjZXNzIl0sImFtciI6WyJkYXRhYmFzZSJdfQ.lSb2RPrkNV4UUOfEF65YAgX5yJSzx03d3e2_Dqr_LySUUC92JHVmpcooD_BhjnmOql1gtKyf0cKVkJXV0NiSqTJEYevczGqo3hIUWJo-KduIBkmZlJSPn-fjqxQHe0QCflUqohCu13jh4VBEGJT7OmJ35xgRHLbf2lQ2ZkgSnTmlwrJ9UMQvL1u8whk_bAlpecNytlDcXXndu1EYixjV7EeQ5ty8hgCsfB8s-4kXUFk2B_PtuIAJonIO3In6yJQnhLSuDWR2IlCMRyJDTgNUTQXq-hT9AjI4dyPMzm7A3VntmVHfPxnP7L5r-3oDiXTrWHf6J6-GwqlfQPxYuNnhnA',
+            customerId = '910D4C2F-B394-4578-8D9C-7CA3FD3266E2';
+
+        $(document).ready(function () {
+            $('.container > div').not("#Home").hide();
+            LoadProducts();
+
+            $('nav li a').click(function () {
+                $('.container > div').hide();
+                $('.nav li').removeClass('active');
+
+                $(this).addClass('active');
+                $('#' + $(this).attr('data-div')).show();
+
+                if ($(this).attr('data-div') == 'Home') {
+                    $('#tblProducts').empty();
+                    LoadProducts();
+                }
+            });
+
+            $('#btnSearch').click(function () {
+                var searchText = $('#txtSearch').val().trim();
+
+                if (searchText) {
+                    $('#tblProducts').empty();
+                    LoadProducts(searchText);
+                }
+            });
+
+            $('#btnPlaceOrder').click(function () {
+                var cartItems = $('#tblCart tbody tr');
+
+                if (cartItems.length > 0) {
+                    $('#Order').modal('show');
+                    return;
+                }
+
+                alert("Please add items into the cart.");
+            });
+
+            $('#btnConfirmOrder').click(function () {
+                PostOrders();
+            });
+        });
+
+        function PostOrders() {
+            // 1. Build order object to match the model class Orders.cs.
+            var order = {
+                Customerid: customerId,
+                CustomerStreetaddress: $('#txtStreetAdd').val(),
+                Customercity: $('#txtCity').val(),
+                Customerstate: $('#txtState').val(),
+                Customerpostalcode: $('#txtPostalCode').val(),
+                Customercountry: $('#txtCountry').val(),
+                OrdersProducts: new Array()
+            };
+
+            // 2. Push cart items into order object as an array.
+            $('#tblCart tbody tr').each(function () {
+                order.OrdersProducts.push(
+                    {
+                        Productid: $(this).attr('data-product-id'),
+                        Productname: $(this).find('td.name').html(),
+                        Productprice: $(this).attr('data-price'),
+                        Finalprice: $(this).find('td.price').html().replace('$', ''),
+                        Productqty: $(this).find('td.qty').html()
+                    });
+            });
+
+            // 3. Call POST /api/Orders.
+            $.ajax({
+                url: 'http://localhost:57571/api/Orders',
+                type: "POST",
+                contentType: "application/json",
+                dataType: "json",
+                data: JSON.stringify(order),
+                headers:
+                {
+                    "Authorization": "Bearer " + accessToken
+                },
+                success: function (result) {
+                    // Empty Cart.
+                    $('#tblCart tbody tr').each(function () {
+                        DeleteCart($(this).attr('data-cart-id'));
+                    });
+
+                    alert("Order Placed Successfully.");
+                },
+                error: function (message) {
+                    console.log(message.statusText);
+                }
+            });
+        }
+
+        function LoadProducts(searchText) {
+            if (!searchText)
+                searchText = "";
+
+            // Load products' details.
+            $.ajax({
+                url: 'http://localhost:57571/api/Products?searchText=' + searchText,
+                type: "GET",
+                contentType: "application/json",
+                dataType: "json",
+                success: function (result) {
+                    console.log(result);
+
+                    $.each(result, function (index, value) {
+                        $('#tblProducts')
+                            .append($('<tr>')
+                                .append($('<td>')
+                                    .append($('<h3>')
+                                        .html(value.productsdetail[0].name))
+                                    .append($('<span>')
+                                        .html('Price: $' + value.price).addClass('spanPrice'))
+                                    .append($('<p>')
+                                        .html(value.productsdetail[0].description))
+                                    .append($('<a>')
+                                        .attr({ 'href': value.productsdetail[0].url, 'target': '_blank' })
+                                        .html('Amazon Link'))
+                                    .append($('<input>')
+                                        .attr({ 'type': 'button' })
+                                        .val("Add To Cart")
+                                        .addClass("btn btn-success floatRight")
+                                        .click(function () {
+                                            AddToCart(value.id, value.productsdetail[0].name, 1, value.price);
+                                        }))
+                                )
+                            );
+                    });
+                }
+            });
+        }
+
+        function AddToCart(productId, productName, qty, price) {
+            // Check if item already present. If yes, increase the qty and calculate price.
+            var cartItem = $('#tblCart').find('tr[data-product-id=' + productId + ']');
+            if (cartItem.length > 0) {
+                var qtyTd = cartItem.find('td.qty');
+                var newQty = parseInt(qtyTd.html()) + qty;
+                qtyTd.html(newQty);
+                cartItem.find('td.price').html('$' + (newQty * price).toFixed(2));
+
+                // Update Cart in Database: PUT /api/Carts/{id}
+                PutCart(cartItem);
+                return;
+            }
+
+            cartItem = $('#tblCart tbody')
+                .append($('<tr>')
+                    .attr({ 'data-product-id': productId, 'data-price': price })
+                    .append($('<td class="name">').html(productName))
+                    .append($('<td class="qty">').html(qty))
+                    .append($('<td class="price">').html('$' + qty * price))
+                    .append($('<td>')
+                        .append($('<a>')
+                            .attr('href', '#')
+                            .append($('<span>').addClass('glyphicon glyphicon-trash'))
+                            .click(function () {
+                                // Delete Cart from Database: DELETE /api/Carts/{id}
+                                DeleteCart($(this).parents('tr').attr('data-cart-id'));
+                            })
+                        )
+                    )
+                );
+
+            // Add one Cart record in Database: POST /api/Carts
+            PostCart(customerId,
+                productId,
+                cartItem.find('td.qty').html(),
+                cartItem.find('td.price').html().replace('$', ''))
+        }
+
+        function PostCart(customerId, productId, qty, finalPrice) {
+            var cart = {
+                Customerid: customerId,
+                Productid: productId,
+                Qty: qty,
+                Finalprice: finalPrice
+            };
+
+            $.ajax({
+                url: 'http://localhost:57571/api/Carts',
+                type: "POST",
+                contentType: "application/json",
+                dataType: "json",
+                data: JSON.stringify(cart),
+                headers:
+                {
+                    "Authorization": "Bearer " + accessToken
+                },
+                success: function (result) {
+                    var cartItem = $('#tblCart').find('tr[data-product-id=' + productId + ']');
+                    cartItem.attr('data-cart-id', result.id);
+                    cartItem.attr('data-customer-id', result.customerid);
+                },
+                error: function (message) {
+                    console.log(message.statusText);
+                }
+            });
+        }
+
+        function PutCart(cartItem) {
+            var cart = {
+                Id: cartItem.attr('data-cart-id'),
+                Customerid: '910D4C2F-B394-4578-8D9C-7CA3FD3266E2',
+                Productid: cartItem.attr('data-product-id'),
+                Qty: cartItem.find('td.qty').html(),
+                Finalprice: cartItem.find('td.price').html().replace('$', '')
+            };
+
+            $.ajax({
+                url: 'http://localhost:57571/api/Carts/' + cart.Id,
+                type: "PUT",
+                contentType: "application/json",
+                dataType: "json",
+                data: JSON.stringify(cart),
+                headers:
+                {
+                    "Authorization": "Bearer " + accessToken
+                },
+                error: function (message) {
+                    console.log(message.statusText);
+                }
+            });
+        }
+
+        function DeleteCart(cartId) {
+            $.ajax({
+                url: 'http://localhost:57571/api/Carts/' + cartId,
+                type: "DELETE",
+                contentType: "application/json",
+                headers:
+                {
+                    "Authorization": "Bearer " + accessToken
+                },
+                success: function (result) {
+                    if (result.id) {
+                        var cartItem = $('#tblCart').find('tr[data-cart-id=' + cartId + ']');
+                        cartItem.remove();
+                    }
+                },
+                error: function (message) {
+                    console.log(message.statusText);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">FlixOneStore</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a data-div="Home" href="#">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="Home">
+            <div class="row">
+                <div class="col-lg-5">
+                    <input type="text" id="txtSearch" class="form-control" placeholder="Enter text to search" />
+                </div>
+                <div class="col-lg-2">
+                    <button type="button" class="btn btn-info" id="btnSearch">
+                        <span class="glyphicon glyphicon-search"></span> Search
+                    </button>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-4"><h3>My Cart</h3></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <table id="tblProducts"></table>
+                </div>
+                <div class="col-lg-4">
+                    <table id="tblCart" class="table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <input type="button" id="btnPlaceOrder" class="btn btn-primary" value="Place Order" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Order" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Place Order</h4>
+                </div>
+                <div class="modal-body">
+                    <h4>Shipping Details</h4>
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"
+                                   for="txtStreetAdd">Street Address</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control"
+                                       id="txtStreetAdd" placeholder="Street Address" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"
+                                   for="txtCity">City</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control"
+                                       id="txtCity" placeholder="City" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"
+                                   for="txtState">State</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control"
+                                       id="txtState" placeholder="State" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"
+                                   for="txtPostalCode">Postal Code</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control"
+                                       id="txtPostalCode" placeholder="Postal Code" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"
+                                   for="txtCountry">Country</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control"
+                                       id="txtCountry" placeholder="Country" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="btnConfirmOrder">Submit</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
