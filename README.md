@@ -38,5 +38,3 @@ To set up the system, readers should have following on their machines:
 
 * [.NET Standard 2.0 Cookbook](https://www.packtpub.com/application-development/net-standard-20-cookbook?utm_source=github&utm_medium=repository&utm_campaign=9781788834667)
 
-### Suggestions and Feedback
-[Click here](https://docs.google.com/forms/d/e/1FAIpQLSe5qwunkGf6PUvzPirPDtuy1Du5Rlzew23UBp2S-P3wB-GcwQ/viewform) if you have any feedback or suggestions.
