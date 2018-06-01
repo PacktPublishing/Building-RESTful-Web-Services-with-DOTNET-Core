@@ -9,10 +9,10 @@ This chapter contains 3-code projects:
  3. OAuth2.0 Authentication
  
 ### Instructions to use the code examples ###
-Refer following detailed instructions to start with code-examples of this chapter:
+Refer to the following detailed instructions to start with code-examples of this chapter:
  
 #### Installation of Visual Studio ####
-To run these code-examples you need to instal Visual Studio 2017 Update 3 or later (preferred IDE), to do so, follow these instructions:
+To run these code-examples you need to instal Visual Studio 2017 Update 3, or later (preferred IDE); to do so, follow these instructions:
  
  1. Download Visual Studio 2018 from download link mentioned with installation instructions: https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio 
  2. Follow the installation instructions mentioned thereon.
@@ -28,7 +28,7 @@ If you did not have .NET Core 2.0 installed, you need to follow these instructio
  2. Installation instructions: https://blogs.msdn.microsoft.com/benjaminperkins/2017/09/20/how-to-install-net-core-2-0/
 
 #### Setting up of Databse ####
-You need to either create a new database or you can take existing db script from *DB* folder, available at root of this repository. To do so follow these steps:
+You need to either create a new database or you can take existing db script from *DB* folder, which is available at the root of this repository. To do so follow these steps:
 
  1. Run SQL Server 2008 R2
  2. Enter valid creds
