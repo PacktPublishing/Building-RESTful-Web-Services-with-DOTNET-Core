@@ -8,7 +8,7 @@ This chapter covers code exmaples to showcase Web Client
 Refer to the following detailed instructions to start with code-examples of this chapter:
  
 #### Installation of Visual Studio ####
-To run these code-examples you need to instal Visual Studio 2017 Update 3, or later (preferred IDE); to do so, follow these instructions:
+To run these code-examples you need to install Visual Studio 2017 Update 3, or later (preferred IDE); to do so, follow these instructions:
  
  1. Download Visual Studio 2018 from download link mentioned with installation instructions: https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio 
  2. Follow the installation instructions mentioned thereon.
